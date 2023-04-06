@@ -1,0 +1,25 @@
+print('-='*15)
+print('\33[36mVAMOS JOGAR PAR OU ÍMPAR\33[m')
+print('-='*15)
+sum = count = value = 0
+even_odd = str
+from random import randint
+computer = randint(0,9)
+while True:
+    value = int(input('Diga um valor: '))
+    choice = str(input('Par ou Ímpar? [P/I] ')).upper().strip()
+    sum = value + computer
+    if sum % 2 == 0:
+        even_odd = 'PAR'
+    elif sum % 2 != 0:
+        even_odd = 'IMPAR'
+    print(f'Você jogou {value} e o computador {computer}. Total de {sum} deu {even_odd}')
+    if choice == even_odd:
+        print('Você VENCEU !')
+        print('Vamos jogar novamente...')
+        print('-='*15)
+        count += 1
+    elif choice != even_odd:
+        print('Você PERDEU !')
+        print(f'GAME OVER! Você venceu {count} vezes. ')
+        break
